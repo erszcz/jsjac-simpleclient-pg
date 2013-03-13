@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id = "com.github.lavrin.jsjac-simpleclient"
+        version = "0.0.1">
+
+    <name>JSJaC SimpleClient</name>
+
+    <description>
+        JSJaC SimpleClient repackaged for building with PhoneGap and mobile platforms
+    </description>
+
+    <feature name="http://api.phonegap.com/1.0/device" />
+
+    <preference name="phonegap-version" value="2.2.0" />
+    <preference name="orientation" value="default" />
+    <preference name="target-device" value="universal" />
+    <preference name="fullscreen" value="false" />
+
+</widget>
