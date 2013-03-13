@@ -19,7 +19,7 @@ function SimpleClient(config) {
         this.signedin.handleMessage(msg.getFrom(), msg.getBody());
     };
 
-    this.login = function(jid, password, success_cb, error_cb) {
+    this.login = function(jid, password, httpbase, success_cb, error_cb) {
         var e = '';
         if (!jid || jid === '')
             e += 'JID missing! ';
@@ -27,8 +27,11 @@ function SimpleClient(config) {
             e += 'JID malformed!';
         if (!password || password === '')
             e += 'Password missing!';
+        if (!httpbase || httpbase === '')
+            e += 'Service URI missing!';
         if (e !== '') return error_cb(e);
 
+        config.httpbase = httpbase;
         this.conn = new JSJaCWebSocketConnection(_.extend(config, {oDbg: this.logger}));
         this.setupConn();
         this.conn.registerHandler('onconnect', JSJaC.bind(function() {

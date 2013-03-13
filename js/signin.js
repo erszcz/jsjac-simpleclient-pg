@@ -1,6 +1,7 @@
 $('#signin_form').submit(function() {
     $('#error').hide();
-    app.login($('#jid').val(), $('#password').val(), app.signin._successHandler, app.signin._errorHandler);
+    app.login($('#jid').val(), $('#password').val(), $('#httpbase').val(),
+              app.signin._successHandler, app.signin._errorHandler);
     return false;
 });
 
