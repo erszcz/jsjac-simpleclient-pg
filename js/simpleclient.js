@@ -32,7 +32,11 @@ function SimpleClient(config) {
         if (e !== '') return error_cb(e);
 
         config.httpbase = httpbase;
-        this.conn = new JSJaCWebSocketConnection(_.extend(config, {oDbg: this.logger}));
+        if (httpbase.substring(0,3) === "ws:" || httpbase.substring(0,4) === "wss:") {
+            this.conn = new JSJaCWebSocketConnection(_.extend(config, {oDbg: this.logger}));
+        } else {
+            this.conn = new JSJaCHttpBindingConnection(_.extend(config, {oDbg: this.logger}));
+        }
         this.setupConn();
         this.conn.registerHandler('onconnect', JSJaC.bind(function() {
             success_cb();
