@@ -9,6 +9,7 @@ function SignIn() {
     this.show = function() {
         $('#signin_form').show();
         document.title = 'Login · '+document.title;
+        $('#httpbase').val(Config.httpbase);
     };
 
     this.fadeIn = function(cb) {
