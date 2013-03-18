@@ -7,3 +7,6 @@ library for JavaScript.
 
 This repo is a version of the example application repackaged for
 building with [PhoneGap](http://phonegap.com/).
+
+Download
+[development build for your platform](https://build.phonegap.com/apps/340348).
